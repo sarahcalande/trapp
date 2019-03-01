@@ -28,7 +28,7 @@ export default class HomeScreen extends React.Component {
 
 
 componentDidMount(){
-  return fetch('https://talentrecap.com/wp-json/wp/v2/posts?embed')
+  return fetch('https://talentrecap.com/wp-json/wp/v2/posts?_embed=true')
   .then((r)=>r.json())
   .then((responseJson) => {this.setState({
     isLoading: false,
@@ -55,6 +55,8 @@ render(){
               <ListItem
             title={<HTML html={`${item.title.rendered}`}/>}
 
+    avatar = {
+<Image source = {{uri: item._embedded["wp:featuredmedia"][0].media_details.sizes.thumbnail.source_url}} />}
         />
             )}
             />
