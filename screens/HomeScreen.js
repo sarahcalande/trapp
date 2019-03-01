@@ -13,7 +13,7 @@ import {
 import { WebBrowser } from 'expo';
 import { ListItem, List } from 'react-native-elements';
 import { MonoText } from '../components/StyledText';
-
+import HTML from 'react-native-render-html'
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -49,7 +49,6 @@ render(){
 //image source = {{uri:{ item._embedded['wp:featuredmedia'][0].source_url}}}
 
     return (
-        <List>
           <FlatList style={{ paddingTop: 40, paddingSide: 30}}
                   data={this.state.dataSource}
                   renderItem={({item}) => (
@@ -59,7 +58,6 @@ render(){
         />
             )}
             />
-        </List>
     );
 
 
