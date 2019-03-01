@@ -46,6 +46,8 @@ render(){
   )
 } else
 
+//image source = {{uri:{ item._embedded['wp:featuredmedia'][0].source_url}}}
+
     return (
         <List>
           <FlatList style={{ paddingTop: 40, paddingSide: 30}}
@@ -53,6 +55,7 @@ render(){
                   renderItem={({item}) => (
               <ListItem
             title={<HTML html={`${item.title.rendered}`}/>}
+
         />
             )}
             />
