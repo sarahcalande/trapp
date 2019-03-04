@@ -7,11 +7,11 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
-const HomeStack = createStackNavigator({
+const Home = createStackNavigator({
   Home: HomeScreen,
 });
 
-HomeStack.navigationOptions = {
+Home.navigationOptions = {
   tabBarLabel: 'Home',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -25,12 +25,12 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const AGT = createStackNavigator({
+  AGT: LinksScreen,
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+AGT.navigationOptions = {
+  tabBarLabel: 'AGT',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -39,12 +39,12 @@ LinksStack.navigationOptions = {
   ),
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+const TheVoice = createStackNavigator({
+  TheVoice: SettingsScreen,
 });
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+TheVoice.navigationOptions = {
+  tabBarLabel: 'The Voice',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -54,7 +54,7 @@ SettingsStack.navigationOptions = {
 };
 
 export default createDrawerNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
+  Home,
+  AGT,
+  TheVoice,
 });
