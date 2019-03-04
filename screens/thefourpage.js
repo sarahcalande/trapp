@@ -10,7 +10,7 @@ export default class TheFourPage extends React.Component {
 
 
   componentDidMount(){
-  return fetch('https://talentrecap.com/wp-json/wp/v2/posts?_embed=true')
+  return fetch('https://talentrecap.com/wp-json/wp/v2/posts?categories=568')
   .then((r)=>r.json())
   .then((responseJson) => {this.setState({
     isLoading: false,

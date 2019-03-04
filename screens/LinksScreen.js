@@ -1,27 +1,51 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import { ExpoLinksView } from '@expo/samples';
+import { ExpoConfigView } from '@expo/samples';
 
 export default class LinksScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Links',
-  };
-
-  render() {
-    return (
-      <ScrollView style={styles.container}>
-        {/* Go ahead and delete ExpoLinksView and replace it with your
-           * content, we just wanted to provide you with some helpful links */}
-        <ExpoLinksView />
-      </ScrollView>
-    );
+  constructor(props){
+    super(props);
+  this.state = { isLoading: true }
   }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 15,
-    backgroundColor: '#fff',
-  },
-});
+
+
+  componentDidMount(){
+  return fetch('https://talentrecap.com/wp-json/wp/v2/posts?categories=3')
+  .then((r)=>r.json())
+  .then((responseJson) => {this.setState({
+    isLoading: false,
+    dataSource: responseJson
+  });
+  })
+  }
+
+  render(){
+    if(this.state.isLoading){
+  return(
+    <View style={{flex: 1, padding: 20}}>
+      <ActivityIndicator/>
+    </View>
+  )
+  } else
+
+  //image source = {{uri:{ item._embedded['wp:featuredmedia'][0].source_url}}}
+
+    return (
+            <FlatList style={{ paddingTop: 40, paddingSide: 30}}
+                    data={this.state.dataSource}
+                    renderItem={({item}) => (
+                <ListItem
+              title={<HTML html={`${item.title.rendered}`}/>}
+              avatar = {
+    fetch(`https://talentrecap.com/wp-json/wp/v2/media/${item.featured_media}`)
+      .then(r=>r.json())
+      .then((r)=>{
+        return (<Image source = {{uri:r.media_details.sizes.thumbnail.source_url}}/>)})
+          }
+        />
+      )
+    }
+    />
+    )
+
+  }}

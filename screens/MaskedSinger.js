@@ -10,7 +10,7 @@ export default class MaskedSinger extends React.Component {
 
 
   componentDidMount(){
-  return fetch('https://talentrecap.com/wp-json/wp/v2/posts?_embed=true')
+  return fetch('https://talentrecap.com/wp-json/wp/v2/posts?categories=5')
   .then((r)=>r.json())
   .then((responseJson) => {this.setState({
     isLoading: false,
