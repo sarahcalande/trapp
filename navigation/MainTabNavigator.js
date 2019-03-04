@@ -6,6 +6,12 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import MaskedSinger from '../screens/MaskedSinger';
+
+
+
+
+
 
 const Home = createStackNavigator({
   Home: HomeScreen,
@@ -57,4 +63,5 @@ export default createDrawerNavigator({
   Home,
   AGT,
   TheVoice,
-});
+},
+{drawerBackgroundColor: "pink",});
