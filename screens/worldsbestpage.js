@@ -1,7 +1,7 @@
 import React from 'react';
 import { ExpoConfigView } from '@expo/samples';
 
-export default class MaskedSinger extends React.Component {
+export default class WorldsBestPage extends React.Component {
   constructor(props){
     super(props);
   this.state = { isLoading: true }
@@ -48,5 +48,4 @@ export default class MaskedSinger extends React.Component {
     />
     )
 
-  }
-}
+  }}

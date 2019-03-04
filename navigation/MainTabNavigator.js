@@ -7,11 +7,15 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import MaskedSinger from '../screens/MaskedSinger';
+import WorldsBestPage from '../screens/worldsbestpage';
 
+const TheWorldsBest = createStackNavigator({
+  TheWorldsBest: WorldsBestPage
+})
 
-
-
-
+const MaskedSingerLink= createStackNavigator({
+  MaskedSingerLink: MaskedSinger,
+})
 
 const Home = createStackNavigator({
   Home: HomeScreen,
@@ -63,5 +67,7 @@ export default createDrawerNavigator({
   Home,
   AGT,
   TheVoice,
+  MaskedSingerLink,
+  TheWorldsBest,
 },
 {drawerBackgroundColor: "rgb(255,20,147)",});
