@@ -4,7 +4,7 @@ import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import AGTalent from '../screens/AGTalent';
 import SettingsScreen from '../screens/SettingsScreen';
 import MaskedSinger from '../screens/MaskedSinger';
 import WorldsBestPage from '../screens/worldsbestpage';
@@ -41,7 +41,7 @@ Home.navigationOptions = {
 };
 
 const AGT = createStackNavigator({
-  AGT: LinksScreen,
+  AGT: AGTalent,
 });
 
 AGT.navigationOptions = {
