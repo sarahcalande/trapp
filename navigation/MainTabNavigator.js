@@ -8,6 +8,7 @@ import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import MaskedSinger from '../screens/MaskedSinger';
 import WorldsBestPage from '../screens/worldsbestpage';
+import TheFourPage from '../screens/thefourpage'
 
 const TheWorldsBest = createStackNavigator({
   TheWorldsBest: WorldsBestPage
@@ -15,6 +16,10 @@ const TheWorldsBest = createStackNavigator({
 
 const MaskedSingerLink= createStackNavigator({
   MaskedSingerLink: MaskedSinger,
+})
+
+const TheFour = createStackNavigator({
+  TheFour: TheFourPage
 })
 
 const Home = createStackNavigator({
@@ -69,5 +74,6 @@ export default createDrawerNavigator({
   TheVoice,
   MaskedSingerLink,
   TheWorldsBest,
+  TheFour
 },
 {drawerBackgroundColor: "rgb(255,20,147)",});
