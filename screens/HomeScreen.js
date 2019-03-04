@@ -49,29 +49,23 @@ render(){
 //image source = {{uri:{ item._embedded['wp:featuredmedia'][0].source_url}}}
 
     return (
-          <FlatList style={{ paddingTop: 40, paddingSide: 30}}
-                  data={this.state.dataSource}
-                  renderItem={({item}) => (
-              <ListItem
-            title={<HTML html={`${item.title.rendered}`}/>}
-
-    avatar = {
-<Image source = {{uri: item._embedded["wp:featuredmedia"][0].media_details.sizes.thumbnail.source_url}} />}
+            <FlatList style={{ paddingTop: 40, paddingSide: 30}}
+                    data={this.state.dataSource}
+                    renderItem={({item}) => (
+                <ListItem
+              title={<HTML html={`${item.title.rendered}`}/>}
+              avatar = {
+    fetch(`https://talentrecap.com/wp-json/wp/v2/media/${item.featured_media}`)
+      .then(r=>r.json())
+      .then((r)=>{
+        return (<Image source = {{uri:r.media_details.sizes.thumbnail.source_url}}/>)})
+          }
         />
-            )}
-            />
-    );
+      )
+    }
+    />
+    )
 
-
-  _handleLearnMorePress = () => {
-    WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/development-mode');
-  };
-
-  _handleHelpPress = () => {
-    WebBrowser.openBrowserAsync(
-      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
-    );
-  };
-}
+  }
 
 }
