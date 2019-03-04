@@ -64,4 +64,4 @@ export default createDrawerNavigator({
   AGT,
   TheVoice,
 },
-{drawerBackgroundColor: "pink",});
+{drawerBackgroundColor: "rgb(255,20,147)",});
