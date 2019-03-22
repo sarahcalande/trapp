@@ -31,7 +31,7 @@ export default class HomeScreen extends React.Component {
 
 
 componentDidMount(){
-  return fetch('https://talentrecap.com/wp-json/wp/v2/posts?categories=5')
+  return fetch('https://talentrecap.com/wp-json/wp/v2/posts?categories=5?_embed=true')
   .then((r)=>r.json())
   .then((responseJson) => {this.setState({
     isLoading: false,
