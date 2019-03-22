@@ -76,7 +76,7 @@ render(){
                        <Text note>Published on: {Moment(item.date).format('d MMM Y')}</Text>
            </CardItem>
            <CardItem>
-<HTML ignoredStyles={["font-family", 'padding','transform', 'font-weight',"letter-spacing", "display", "color"]} style={{textAlign: 'center', alignSelf:'center', paddingSide:10}}html={item.content.rendered}imagesMaxWidth={Dimensions.get('window').width }/>
+<HTML ignoredStyles={["font-family", 'padding','transform', 'font-weight',"letter-spacing", "display", "color"]} style={{alignSelf:'center'}}html={item.content.rendered}imagesMaxWidth={Dimensions.get('window').width }/>
 </CardItem>
 
            </Card>
