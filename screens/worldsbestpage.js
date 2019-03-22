@@ -18,7 +18,7 @@ import React from 'react';
   import HTML from 'react-native-render-html';
   import { Container, Card, Content, CardItem, Header, Body, Title} from 'native-base';
 
-  export default class AGTalent extends React.Component {
+  export default class WorldsBestPage extends React.Component {
     static navigationOptions = {
       header: null,
     };
